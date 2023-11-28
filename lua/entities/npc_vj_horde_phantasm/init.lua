@@ -6,7 +6,7 @@ include('shared.lua')
 	without the prior written consent of the author, unless otherwise indicated for stand-alone materials.
 -----------------------------------------------*/
 ENT.Model = {"models/zombie/classic.mdl"} -- The game will pick a random model from the table when the SNPC is spawned | Add as many as you want
-ENT.StartHealth = 100
+ENT.StartHealth = 200
 ENT.HullType = HULL_HUMAN
 ---------------------------------------------------------------------------------------------------------------------------------------------
 ENT.VJ_NPC_Class = {"CLASS_PLAYER_ALLY", "CLASS_COMBINE"} -- NPCs with the same class with be allied to each other
@@ -108,7 +108,7 @@ function ENT:CustomOnInitialize()
     self:SetRenderMode(RENDERMODE_TRANSCOLOR)
     self:SetColor(Color(0, 0, 0, 200))
 	self.MeleeAttackDamage = self.MeleeAttackDamage + 6 * self.properties.level
-	--self:SetHealth(100)
+	self:SetHealth(200)
 	self:AddRelationship("npc_turret_floor D_LI 99")
 	self:AddRelationship("npc_vj_horde_combat_bot D_LI 99")
 	self:AddRelationship("npc_manhack D_LI 99")
